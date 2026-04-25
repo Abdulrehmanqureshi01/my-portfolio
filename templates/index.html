@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -23,11 +24,11 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <span class="badge">Open for Collaborations</span>
+            <span class="badge">Innovation & Impact</span>
             <h1>DRIVEN BY <span class="gradient-text">IMPACT.</span></h1>
-            <p>I transform complex technical challenges into mesmerizing, user-centric digital solutions.</p>
+            <p>I transform complex technical challenges into mesmerizing digital solutions.</p>
             <div class="hero-btns">
-                <a href="#works" class="btn-pill-primary">View My Works</a>
+                <a href="#works" class="btn-pill-primary">Explore My Projects</a>
             </div>
         </div>
     </section>
@@ -39,9 +40,9 @@
                 <h2 class="section-title">ABOUT US<span>.</span></h2>
                 <p class="headline">Innovating at the intersection of design and technology.</p>
                 <p class="body-text">
-                    I am a dedicated developer and strategist focused on building high-performance digital environments. My approach blends technical precision with creative problem-solving, ensuring that every line of code adds measurable value to the business. 
+                    I am a dedicated developer focused on building high-performance digital environments. My approach blends technical precision with creative problem-solving, ensuring that every line of code adds measurable value to the business. 
                     <br><br>
-                    From developing seamless Flask architectures to designing photorealistic brand assets, I thrive on creating experiences that aren't just functional, but memorable. I believe in continuous innovation and am currently pushing the boundaries of AI integration and modern web aesthetics to help clients dominate their digital space.
+                    From developing seamless Flask architectures to designing photorealistic brand assets, I help clients dominate their digital space.
                 </p>
             </div>
             <div class="image-side">
@@ -59,11 +60,18 @@
             <div class="work-card">
                 <div class="thumbnail">
                     <img src="{{ project.image }}" alt="{{ project.title }}">
+                    <div class="summary-overlay">
+                        <div class="summary-text">
+                            <h4>Case Study</h4>
+                            <p><strong>Challenge:</strong> {{ project.challenge }}</p>
+                            <p><strong>Solution:</strong> {{ project.solution }}</p>
+                            <p><strong>Benefit:</strong> {{ project.benefit }}</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-info">
                     <h3>{{ project.title }}</h3>
-                    <p>{{ project.impact }}</p>
-                    <span class="status-badge">{{ project.status }}</span>
+                    <span class="hint-text">Hover for details</span>
                 </div>
             </div>
             {% endfor %}
@@ -72,22 +80,23 @@
 
     <section id="contact" class="section-container contact-center">
         <h2 class="section-title">CONTACT US<span>.</span></h2>
+        <p class="subtitle">Let's build your next business solution.</p>
         <div class="contact-cards">
             <a href="https://wa.me/918806066653" class="contact-card">
                 <i class="fa-brands fa-whatsapp"></i>
                 <h3>WhatsApp</h3>
-                <p>+91 8806066653</p>
+                <p>Chat Instantly</p>
             </a>
             <a href="mailto:abdulqureshi1m@gmail.com" class="contact-card">
                 <i class="fa-regular fa-envelope"></i>
                 <h3>Email ID</h3>
-                <p>abdulqureshi1m@gmail.com</p>
+                <p>Send Inquiry</p>
             </a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Portfolio. All Rights Reserved.</p>
+        <p>&copy; 2026 Portfolio. Built for Results.</p>
     </footer>
 
 </body>
