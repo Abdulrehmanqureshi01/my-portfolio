@@ -3,35 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | High Impact Developer</title>
+    <title>Premium Portfolio | Creative Developer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="glass-nav">
-        <div class="logo">PORTFOLIO<span>.</span></div>
-        <div class="links">
-            <a href="#work">Work</a>
-            <a href="mailto:contact@yourdomain.com" class="hire-btn">Hire Me</a>
-        </div>
+
+    <div class="water-bg"></div>
+
+    <nav class="navbar">
+        <div class="logo">CREATIVE<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT US</a></li>
+            <li><a href="#works">MY WORKS</a></li>
+            <li><a href="#contact" class="btn-rounded-nav">CONTACT US</a></li>
+        </ul>
     </nav>
 
-    <header class="hero">
-        <h1>Building <span class="glow">Digital</span> <br>Masterpieces</h1>
-        <div class="stat-pill">
-            <span class="count">{{ client_count }}+</span> 
-            <span class="label">Clients Served</span>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>DRIVEN BY <span class="gradient-text">IMPACT.</span></h1>
+            <p>I build high-end digital experiences that transform businesses.</p>
+            <a href="#works" class="btn-pill-primary">View My Works</a>
         </div>
-    </header>
+    </section>
 
-    <main id="work" class="grid">
-        {% for p in projects %}
-        <div class="card">
-            <span class="status">{{ p.status }}</span>
-            <h3>{{ p.title }}</h3>
-            <p>{{ p.impact }}</p>
+    <section id="about" class="section-container">
+        <div class="about-grid">
+            <div class="text-side">
+                <div class="accent-line"></div>
+                <h2 class="section-title">ABOUT US<span>.</span></h2>
+                <p class="headline">Passionate about innovation and driven by results.</p>
+                <p class="body-text">I focus on cutting-edge technologies to create products that bridge the gap between imagination and reality. Every project is an opportunity to push boundaries.</p>
+            </div>
+            <div class="image-side">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000" alt="Profile">
+                </div>
+            </div>
         </div>
-        {% endfor %}
-    </main>
+    </section>
+
+    <section id="works" class="section-container">
+        <h2 class="section-title center-text">MY WORKS<span>.</span></h2>
+        <div class="works-grid">
+            {% for project in projects %}
+            <div class="work-card">
+                <div class="card-content">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.impact }}</p>
+                    <span class="badge">{{ project.status }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="contact" class="section-container contact-center">
+        <h2 class="section-title">CONTACT US<span>.</span></h2>
+        <p class="subtitle">Available for new opportunities and collaborations.</p>
+        
+        <div class="contact-cards">
+            <a href="https://wa.me/918806066653" class="contact-card">
+                <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+                <h3>WhatsApp</h3>
+                <p>Chat with me instantly</p>
+            </a>
+            <a href="mailto:abdulqureshi1m@gmail.com" class="contact-card">
+                <div class="icon-box"><i class="fa-regular fa-envelope"></i></div>
+                <h3>Email ID</h3>
+                <p>Send a formal inquiry</p>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Creative Portfolio. Built with Passion.</p>
+    </footer>
+
 </body>
 </html>
