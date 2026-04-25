@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | High Impact Developer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="glass-nav">
+        <div class="logo">PORTFOLIO<span>.</span></div>
+        <div class="links">
+            <a href="#work">Work</a>
+            <a href="mailto:contact@yourdomain.com" class="hire-btn">Hire Me</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Building <span class="glow">Digital</span> <br>Masterpieces</h1>
+        <div class="stat-pill">
+            <span class="count">{{ client_count }}+</span> 
+            <span class="label">Clients Served</span>
+        </div>
+    </header>
+
+    <main id="work" class="grid">
+        {% for p in projects %}
+        <div class="card">
+            <span class="status">{{ p.status }}</span>
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.impact }}</p>
+        </div>
+        {% endfor %}
+    </main>
+</body>
+</html>
