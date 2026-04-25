@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Portfolio | Creative Developer</title>
+    <title>Professional Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,7 +12,7 @@
     <div class="water-bg"></div>
 
     <nav class="navbar">
-        <div class="logo">CREATIVE<span>.</span></div>
+        <div class="logo">PORTFOLIO<span>.</span></div>
         <ul class="nav-links">
             <li><a href="#home">HOME</a></li>
             <li><a href="#about">ABOUT US</a></li>
@@ -23,9 +23,12 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
+            <span class="badge">Open for Collaborations</span>
             <h1>DRIVEN BY <span class="gradient-text">IMPACT.</span></h1>
-            <p>I build high-end digital experiences that transform businesses.</p>
-            <a href="#works" class="btn-pill-primary">View My Works</a>
+            <p>I transform complex technical challenges into mesmerizing, user-centric digital solutions.</p>
+            <div class="hero-btns">
+                <a href="#works" class="btn-pill-primary">View My Works</a>
+            </div>
         </div>
     </section>
 
@@ -34,12 +37,16 @@
             <div class="text-side">
                 <div class="accent-line"></div>
                 <h2 class="section-title">ABOUT US<span>.</span></h2>
-                <p class="headline">Passionate about innovation and driven by results.</p>
-                <p class="body-text">I focus on cutting-edge technologies to create products that bridge the gap between imagination and reality. Every project is an opportunity to push boundaries.</p>
+                <p class="headline">Innovating at the intersection of design and technology.</p>
+                <p class="body-text">
+                    I am a dedicated developer and strategist focused on building high-performance digital environments. My approach blends technical precision with creative problem-solving, ensuring that every line of code adds measurable value to the business. 
+                    <br><br>
+                    From developing seamless Flask architectures to designing photorealistic brand assets, I thrive on creating experiences that aren't just functional, but memorable. I believe in continuous innovation and am currently pushing the boundaries of AI integration and modern web aesthetics to help clients dominate their digital space.
+                </p>
             </div>
             <div class="image-side">
                 <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000" alt="Profile">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000" alt="Profile">
                 </div>
             </div>
         </div>
@@ -50,10 +57,13 @@
         <div class="works-grid">
             {% for project in projects %}
             <div class="work-card">
-                <div class="card-content">
+                <div class="thumbnail">
+                    <img src="{{ project.image }}" alt="{{ project.title }}">
+                </div>
+                <div class="card-info">
                     <h3>{{ project.title }}</h3>
                     <p>{{ project.impact }}</p>
-                    <span class="badge">{{ project.status }}</span>
+                    <span class="status-badge">{{ project.status }}</span>
                 </div>
             </div>
             {% endfor %}
@@ -62,24 +72,22 @@
 
     <section id="contact" class="section-container contact-center">
         <h2 class="section-title">CONTACT US<span>.</span></h2>
-        <p class="subtitle">Available for new opportunities and collaborations.</p>
-        
         <div class="contact-cards">
-            <a href="https://wa.me/918806066653" class="contact-card">
-                <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+            <a href="https://wa.me/91XXXXXXXXXX" class="contact-card">
+                <i class="fa-brands fa-whatsapp"></i>
                 <h3>WhatsApp</h3>
-                <p>Chat with me instantly</p>
+                <p>+91 XXXXX XXXXX</p>
             </a>
-            <a href="mailto:abdulqureshi1m@gmail.com" class="contact-card">
-                <div class="icon-box"><i class="fa-regular fa-envelope"></i></div>
+            <a href="mailto:yourname@gmail.com" class="contact-card">
+                <i class="fa-regular fa-envelope"></i>
                 <h3>Email ID</h3>
-                <p>Send a formal inquiry</p>
+                <p>yourname@gmail.com</p>
             </a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Creative Portfolio. Built with Passion.</p>
+        <p>&copy; 2026 Portfolio. All Rights Reserved.</p>
     </footer>
 
 </body>
