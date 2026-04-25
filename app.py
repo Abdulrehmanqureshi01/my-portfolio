@@ -5,7 +5,6 @@ from flask import Flask, render_template
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
 def load_projects():
-    # This reads your 'uploads' from the json file
     try:
         with open('projects.json', 'r') as f:
             return json.load(f)
