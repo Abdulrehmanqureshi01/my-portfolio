@@ -1,0 +1,16 @@
+[
+    {
+        "title": "E-Commerce Ecosystem", 
+        "challenge": "Client struggled with 70% cart abandonment and slow mobile speeds.",
+        "solution": "Developed a custom Flask backend with a mobile-first UI.",
+        "benefit": "Sales increased by 40% and page load speed improved.",
+        "image": "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=800"
+    },
+    {
+        "title": "AI Analytics Portal", 
+        "challenge": "Leadership couldn't track project impacts in real-time.",
+        "solution": "Integrated Google Gemini AI to automate data reporting.",
+        "benefit": "Saved 15 hours of manual reporting per week.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800"
+    }
+]
