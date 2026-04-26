@@ -14,13 +14,18 @@
     <nav class="navbar">
         <div class="logo">PORTFOLIO<span>.</span></div>
         <ul class="nav-links">
+            {% if not selected_project %}
             <li><a href="#home">HOME</a></li>
             <li><a href="#about">ABOUT US</a></li>
             <li><a href="#works">MY WORKS</a></li>
             <li><a href="#contact" class="btn-rounded-nav">CONTACT US</a></li>
+            {% else %}
+            <li><a href="/" class="btn-rounded-nav">← BACK TO HOME</a></li>
+            {% endif %}
         </ul>
     </nav>
 
+    {% if not selected_project %}
     <section id="home" class="hero">
         <div class="hero-bg-img"></div>
         <div class="hero-content">
@@ -37,9 +42,7 @@
                 <h2 class="section-title">ABOUT US<span>.</span></h2>
                 <p class="headline">Innovating at the intersection of design and technology.</p>
                 <p class="body-text">
-                    I am a dedicated developer focused on building high-performance digital environments. My approach blends technical precision with creative problem-solving, ensuring that every line of code adds measurable value to the business. 
-                    <br><br>
-                    From developing seamless Flask architectures to designing photorealistic brand assets, I help clients dominate their digital space.
+                    I am a dedicated developer focused on building high-performance digital environments. My approach blends technical precision with creative problem-solving, ensuring that every line of code adds measurable value to the business.
                 </p>
             </div>
             <div class="image-side">
@@ -55,13 +58,13 @@
         <div class="roulette-container">
             <div class="roulette-track">
                 {% for project in projects %}
-                <a href="{{ url_for('project_detail', project_id=loop.index0) }}" class="work-card">
+                <a href="/project/{{ loop.index0 }}" class="work-card">
                     <img src="{{ project.image }}" alt="{{ project.title }}">
                     <div class="card-overlay"><h3>{{ project.title }}</h3></div>
                 </a>
                 {% endfor %}
                 {% for project in projects %}
-                <a href="{{ url_for('project_detail', project_id=loop.index0) }}" class="work-card">
+                <a href="/project/{{ loop.index0 }}" class="work-card">
                     <img src="{{ project.image }}" alt="{{ project.title }}">
                     <div class="card-overlay"><h3>{{ project.title }}</h3></div>
                 </a>
@@ -72,20 +75,36 @@
 
     <section id="contact" class="section-container contact-center">
         <h2 class="section-title">CONTACT US<span>.</span></h2>
-        <p class="subtitle">Let's build your next business solution.</p>
         <div class="contact-cards">
-            <a href="https://wa.me/91XXXXXXXXXX" class="contact-card">
-                <i class="fa-brands fa-whatsapp"></i>
-                <h3>WhatsApp</h3>
-                <p>Chat Instantly</p>
-            </a>
-            <a href="mailto:yourname@gmail.com" class="contact-card">
-                <i class="fa-regular fa-envelope"></i>
-                <h3>Email ID</h3>
-                <p>Send Inquiry</p>
-            </a>
+            <a href="https://wa.me/918806066653" class="contact-card"><i class="fa-brands fa-whatsapp"></i><h3>WhatsApp</h3></a>
+            <a href="mailto:abdulqureshi1m@gmail.com" class="contact-card"><i class="fa-regular fa-envelope"></i><h3>Email</h3></a>
         </div>
     </section>
+
+    {% else %}
+    <section class="section-container detail-view">
+        <div class="detail-grid">
+            <div class="detail-image">
+                <img src="{{ selected_project.image }}" alt="{{ selected_project.title }}">
+            </div>
+            <div class="detail-content">
+                <h1 class="section-title">{{ selected_project.title }}<span>.</span></h1>
+                <div class="case-study-item">
+                    <h3>The Challenge</h3>
+                    <p>{{ selected_project.challenge }}</p>
+                </div>
+                <div class="case-study-item">
+                    <h3>The Solution</h3>
+                    <p>{{ selected_project.solution }}</p>
+                </div>
+                <div class="case-study-item">
+                    <h3>The Benefit</h3>
+                    <p>{{ selected_project.benefit }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
 
     <footer>
         <p>&copy; 2026 Portfolio. All Rights Reserved.</p>
