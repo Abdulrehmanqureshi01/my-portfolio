@@ -1,47 +1,274 @@
-:root { --bg: #0a0a0a; --accent: #ff4d00; --white: #ffffff; }
-* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-body { background-color: var(--bg); color: var(--white); font-family: 'Poppins', sans-serif; line-height: 1.8; overflow-x: hidden; }
-h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 900; }
+:root { 
+    --bg: #0a0a0a; 
+    --accent: #ff4d00; 
+    --white: #ffffff; 
+}
 
-/* Fixed Navbar & Logo */
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 30px 8%; position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(10,10,10,0.8); backdrop-filter: blur(15px); }
-.logo { display: flex; align-items: center; gap: 6px; font-size: 1.4rem; letter-spacing: 2px; }
-.logo span { color: var(--accent); }
-.nav-logo-img { height: 200px; width: auto; border-radius: 5px; }
-.nav-links { list-style: none; display: flex; gap: 40px; align-items: center; }
-.nav-links a { text-decoration: none; color: #fff; font-size: 0.75rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; }
-.btn-rounded-nav { border: 1px solid #fff; padding: 10px 25px; border-radius: 50px; opacity: 1 !important; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    scroll-behavior: smooth; 
+}
 
-/* Original Hero Section */
-.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
-.hero-bg-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2000') center/cover; opacity: 0.2; z-index: -1; filter: grayscale(100%); }
-.hero h1 { font-size: 6rem; line-height: 1.1; }
-.gradient-text { background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.badge { background: #111; padding: 8px 25px; border-radius: 50px; border: 1px solid #222; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; display: inline-block; }
+body { 
+    background-color: var(--bg); 
+    color: var(--white); 
+    font-family: 'Poppins', sans-serif; 
+    line-height: 1.8; 
+    overflow-x: hidden; 
+}
 
-/* Sections & Spacing */
-.section-container { padding: 150px 10%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-.about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; }
-.section-title { font-size: 4.5rem; margin-bottom: 30px; }
-.image-wrapper img { width: 350px; height: 450px; object-fit: cover; border-radius: 20px; filter: grayscale(100%); transition: 0.6s; border: 1px solid #222; margin-left: auto; display: block; }
-.image-wrapper img:hover { filter: grayscale(0%); }
+h1, h2, h3, .logo { 
+    font-family: 'Playfair Display', serif; 
+    font-weight: 900; 
+}
 
-/* Infinite Roulette */
-.roulette-container { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 50px 0; }
-.roulette-track { display: flex; gap: 30px; width: max-content; animation: scroll 40s linear infinite; }
-@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.work-card { width: 400px; height: 500px; border-radius: 25px; overflow: hidden; position: relative; flex-shrink: 0; border: 1px solid #222; text-decoration: none; display: block; }
-.work-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-.card-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: #fff; }
+/* --- Fixed Navbar & Large Logo Alignment --- */
+.navbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 8%; /* Vertical padding set to 0 because height is fixed */
+    position: fixed; 
+    width: 100%; 
+    height: 110px; /* Fixed height keeps the nav from becoming too tall */
+    top: 0; 
+    z-index: 1000; 
+    background: rgba(10,10,10,0.85); 
+    backdrop-filter: blur(15px); 
+    border-bottom: 1px solid #1a1a1a;
+}
 
-/* Contact */
-.contact-center { align-items: center; text-align: center; }
-.contact-cards { display: flex; gap: 30px; margin-top: 60px; width: 100%; max-width: 900px; }
-.contact-card { flex: 1; background: #111; border: 1px solid #222; padding: 50px; border-radius: 35px; text-decoration: none; color: #fff; transition: 0.4s; }
+.logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 0px; /* Removed gap to allow negative margin to work */
+}
 
-/* Background Effect */
-.water-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: linear-gradient(125deg, #0a0a0a, #1a1a1a, #0a0a0a, #1d1d1d); background-size: 400% 400%; animation: flow 15s ease infinite; }
-@keyframes flow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.nav-logo-img { 
+    height: 180px; /* Set slightly smaller than the 200px limit to keep it sharp */
+    width: auto; 
+    margin-right: -25px; /* Adjust this number to get that perfect "2-space" gap */
+    object-fit: contain;
+}
+
+.logo span { 
+    color: var(--accent); 
+}
+
+.logo {
+    font-size: 1.8rem; /* Increased font size to match the larger logo */
+    letter-spacing: 2px;
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 40px; 
+    align-items: center; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: #fff; 
+    font-size: 0.75rem; 
+    letter-spacing: 2px; 
+    opacity: 0.6; 
+    transition: 0.3s; 
+}
+
+.btn-rounded-nav { 
+    border: 1px solid #fff; 
+    padding: 10px 25px; 
+    border-radius: 50px; 
+    opacity: 1 !important; 
+}
+
+/* --- Original Hero Section --- */
+.hero { 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    position: relative; 
+}
+
+.hero-bg-img { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2000') center/cover; 
+    opacity: 0.2; 
+    z-index: -1; 
+    filter: grayscale(100%); 
+}
+
+.hero h1 { 
+    font-size: 6rem; 
+    line-height: 1.1; 
+}
+
+.gradient-text { 
+    background: linear-gradient(90deg, #fff, var(--accent)); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+
+.badge { 
+    background: #111; 
+    padding: 8px 25px; 
+    border-radius: 50px; 
+    border: 1px solid #222; 
+    color: var(--accent); 
+    font-size: 0.8rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    margin-bottom: 20px; 
+    display: inline-block; 
+}
+
+/* --- Sections & Spacing --- */
+.section-container { 
+    padding: 150px 10%; 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.about-grid { 
+    display: grid; 
+    grid-template-columns: 1.2fr 0.8fr; 
+    gap: 80px; 
+    align-items: center; 
+}
+
+.section-title { 
+    font-size: 4.5rem; 
+    margin-bottom: 30px; 
+}
+
+.image-wrapper img { 
+    width: 350px; 
+    height: 450px; 
+    object-fit: cover; 
+    border-radius: 20px; 
+    filter: grayscale(100%); 
+    transition: 0.6s; 
+    border: 1px solid #222; 
+    margin-left: auto; 
+    display: block; 
+}
+
+.image-wrapper img:hover { 
+    filter: grayscale(0%); 
+}
+
+/* --- Infinite Roulette --- */
+.roulette-container { 
+    width: 100vw; 
+    position: relative; 
+    left: 50%; 
+    right: 50%; 
+    margin-left: -50vw; 
+    margin-right: -50vw; 
+    overflow: hidden; 
+    padding: 50px 0; 
+}
+
+.roulette-track { 
+    display: flex; 
+    gap: 30px; 
+    width: max-content; 
+    animation: scroll 40s linear infinite; 
+}
+
+@keyframes scroll { 
+    from { transform: translateX(0); } 
+    to { transform: translateX(-50%); } 
+}
+
+.work-card { 
+    width: 400px; 
+    height: 500px; 
+    border-radius: 25px; 
+    overflow: hidden; 
+    position: relative; 
+    flex-shrink: 0; 
+    border: 1px solid #222; 
+    text-decoration: none; 
+    display: block; 
+}
+
+.work-card img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: 0.5s; 
+}
+
+.card-overlay { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    padding: 30px; 
+    background: linear-gradient(transparent, rgba(0,0,0,0.9)); 
+    color: #fff; 
+}
+
+/* --- Contact Section --- */
+.contact-center { 
+    align-items: center; 
+    text-align: center; 
+}
+
+.contact-cards { 
+    display: flex; 
+    gap: 30px; 
+    margin-top: 60px; 
+    width: 100%; 
+    max-width: 900px; 
+}
+
+.contact-card { 
+    flex: 1; 
+    background: #111; 
+    border: 1px solid #222; 
+    padding: 50px; 
+    border-radius: 35px; 
+    text-decoration: none; 
+    color: #fff; 
+    transition: 0.4s; 
+}
+
+.contact-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+/* --- Background Effect --- */
+.water-bg { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: -1; 
+    background: linear-gradient(125deg, #0a0a0a, #1a1a1a, #0a0a0a, #1d1d1d); 
+    background-size: 400% 400%; 
+    animation: flow 15s ease infinite; 
+}
+
+@keyframes flow { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
 
 .center-text { text-align: center; width: 100%; }
 footer { padding: 80px; text-align: center; opacity: 0.3; font-size: 0.8rem; }
