@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vantage Devs | Digital Solutions</title>
+    <title>Vantage Devs | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,15 +13,15 @@
 
     <nav class="navbar">
         <div class="logo">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="nav-logo-img">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Vantage Devs Logo" class="nav-logo-img">
             VANTAGE DEVS<span>.</span>
         </div>
         <ul class="nav-links">
             {% if not selected_project %}
             <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#works">WORKS</a></li>
-            <li><a href="#contact" class="btn-rounded-nav">CONTACT</a></li>
+            <li><a href="#about">ABOUT US</a></li>
+            <li><a href="#works">MY WORKS</a></li>
+            <li><a href="#contact" class="btn-rounded-nav">CONTACT US</a></li>
             {% else %}
             <li><a href="/" class="btn-rounded-nav">← BACK TO HOME</a></li>
             {% endif %}
@@ -34,15 +34,19 @@
         <div class="hero-content">
             <span class="badge">Innovation & Impact</span>
             <h1>DRIVEN BY <span class="gradient-text">IMPACT.</span></h1>
-            <p>High-end technical development and automotive brand visualization.</p>
+            <p>I transform complex technical challenges into mesmerizing digital solutions.</p>
         </div>
     </section>
 
     <section id="about" class="section-container">
         <div class="about-grid">
             <div class="text-side">
+                <div class="accent-line"></div>
                 <h2 class="section-title">ABOUT US<span>.</span></h2>
-                <p class="body-text">I build high-performance digital environments. From Flask architectures to photorealistic brand assets, I help clients dominate their space.</p>
+                <p class="headline">Innovating at the intersection of design and technology.</p>
+                <p class="body-text">
+                    I am a dedicated developer focused on building high-performance digital environments. My approach blends technical precision with creative problem-solving.
+                </p>
             </div>
             <div class="image-side">
                 <div class="image-wrapper">
@@ -105,6 +109,8 @@
     </section>
     {% endif %}
 
-    <footer><p>&copy; 2026 Vantage Devs. All Rights Reserved.</p></footer>
+    <footer>
+        <p>&copy; 2026 Vantage Devs. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
