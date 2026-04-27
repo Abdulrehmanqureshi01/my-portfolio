@@ -7,7 +7,7 @@ h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 900; }
 .navbar { display: flex; justify-content: space-between; align-items: center; padding: 30px 8%; position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(10,10,10,0.8); backdrop-filter: blur(15px); }
 .logo { display: flex; align-items: center; gap: 15px; font-size: 1.4rem; letter-spacing: 2px; }
 .logo span { color: var(--accent); }
-.nav-logo-img { height: 45px; width: auto; border-radius: 5px; }
+.nav-logo-img { height: 70px; width: auto; border-radius: 5px; }
 .nav-links { list-style: none; display: flex; gap: 40px; align-items: center; }
 .nav-links a { text-decoration: none; color: #fff; font-size: 0.75rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; }
 .btn-rounded-nav { border: 1px solid #fff; padding: 10px 25px; border-radius: 50px; opacity: 1 !important; }
