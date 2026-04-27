@@ -13,6 +13,23 @@ h1, h2, h3, h4, .logo { font-family: 'Playfair Display', serif; font-weight: 900
 .nav-links { list-style: none; display: flex; gap: 40px; }
 .nav-links a { text-decoration: none; color: #fff; font-size: 0.75rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; }
 .btn-rounded-nav { border: 1px solid #fff; padding: 10px 25px; border-radius: 50px; opacity: 1 !important; }
+/* --- Logo & Navbar Branding Update --- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Space between the logo image and "VANTAGE DEVS" text */
+}
+
+.nav-logo-img {
+    height: 45px; /* Adjust this to make your logo look perfect */
+    width: auto;  /* Prevents the logo from looking stretched */
+    border-radius: 6px; /* Smooths the corners of your logo image */
+    transition: transform 0.3s ease;
+}
+
+.nav-logo-img:hover {
+    transform: scale(1.1); /* Makes the logo pop slightly when you hover */
+}
 
 /* Hero */
 .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
