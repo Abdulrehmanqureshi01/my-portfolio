@@ -29,10 +29,10 @@ h1, h2, h3, .logo {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    padding: 0 8%; /* Vertical padding set to 0 because height is fixed */
+    padding: 0 8%; 
     position: fixed; 
     width: 100%; 
-    height: 110px; /* Fixed height keeps the nav from becoming too tall */
+    height: 110px; 
     top: 0; 
     z-index: 1000; 
     background: rgba(10,10,10,0.85); 
@@ -43,24 +43,22 @@ h1, h2, h3, .logo {
 .logo { 
     display: flex; 
     align-items: center; 
-    gap: 0px; /* Removed gap to allow negative margin to work */
+    gap: 0px; 
 }
 
 .nav-logo-img { 
-    height: 180px; /* Set slightly smaller than the 200px limit to keep it sharp */
+    height: 180px; 
     width: auto; 
-    margin-right: -25px; /* Adjust this number to get that perfect "2-space" gap */
+    margin-right: -25px; /* Adjust this to get the perfect 2-space gap */
     object-fit: contain;
 }
 
-.logo span { 
-    color: var(--accent); 
-}
-
-.logo {
-    font-size: 1.8rem; /* Increased font size to match the larger logo */
+.logo-text {
+    font-size: 1.8rem;
     letter-spacing: 2px;
 }
+
+.logo span { color: var(--accent); }
 
 .nav-links { 
     list-style: none; 
@@ -75,7 +73,6 @@ h1, h2, h3, .logo {
     font-size: 0.75rem; 
     letter-spacing: 2px; 
     opacity: 0.6; 
-    transition: 0.3s; 
 }
 
 .btn-rounded-nav { 
@@ -85,7 +82,7 @@ h1, h2, h3, .logo {
     opacity: 1 !important; 
 }
 
-/* --- Original Hero Section --- */
+/* --- Hero Section --- */
 .hero { 
     height: 100vh; 
     display: flex; 
@@ -104,34 +101,12 @@ h1, h2, h3, .logo {
     background: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2000') center/cover; 
     opacity: 0.2; 
     z-index: -1; 
-    filter: grayscale(100%); 
 }
 
-.hero h1 { 
-    font-size: 6rem; 
-    line-height: 1.1; 
-}
+.hero h1 { font-size: 6rem; line-height: 1.1; }
+.gradient-text { background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-.gradient-text { 
-    background: linear-gradient(90deg, #fff, var(--accent)); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-}
-
-.badge { 
-    background: #111; 
-    padding: 8px 25px; 
-    border-radius: 50px; 
-    border: 1px solid #222; 
-    color: var(--accent); 
-    font-size: 0.8rem; 
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-    margin-bottom: 20px; 
-    display: inline-block; 
-}
-
-/* --- Sections & Spacing --- */
+/* --- About & Sections --- */
 .section-container { 
     padding: 150px 10%; 
     min-height: 100vh; 
@@ -147,28 +122,32 @@ h1, h2, h3, .logo {
     align-items: center; 
 }
 
-.section-title { 
-    font-size: 4.5rem; 
-    margin-bottom: 30px; 
+.section-title { font-size: 4.5rem; margin-bottom: 30px; }
+
+/* --- THE FIX: PROJECT VIEW (Left Image, Right Text) --- */
+.detail-view { padding-top: 150px; }
+.detail-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Image left, Content right */
+    gap: 60px; 
+    align-items: center;
 }
 
-.image-wrapper img { 
-    width: 350px; 
-    height: 450px; 
-    object-fit: cover; 
+.detail-image img { 
+    width: 100%; 
     border-radius: 20px; 
-    filter: grayscale(100%); 
-    transition: 0.6s; 
     border: 1px solid #222; 
-    margin-left: auto; 
-    display: block; 
 }
 
-.image-wrapper img:hover { 
-    filter: grayscale(0%); 
+.case-study-item h3 { 
+    color: var(--accent); 
+    margin-top: 25px; 
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* --- Infinite Roulette --- */
+/* --- Roulette --- */
 .roulette-container { 
     width: 100vw; 
     position: relative; 
@@ -177,7 +156,6 @@ h1, h2, h3, .logo {
     margin-left: -50vw; 
     margin-right: -50vw; 
     overflow: hidden; 
-    padding: 50px 0; 
 }
 
 .roulette-track { 
@@ -199,63 +177,17 @@ h1, h2, h3, .logo {
     overflow: hidden; 
     position: relative; 
     flex-shrink: 0; 
-    border: 1px solid #222; 
-    text-decoration: none; 
-    display: block; 
 }
 
-.work-card img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    transition: 0.5s; 
-}
+.work-card img { width: 100%; height: 100%; object-fit: cover; }
 
-.card-overlay { 
-    position: absolute; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    padding: 30px; 
-    background: linear-gradient(transparent, rgba(0,0,0,0.9)); 
-    color: #fff; 
-}
+/* --- Contact & BG --- */
+.contact-cards { display: flex; gap: 30px; margin-top: 60px; }
+.contact-card { flex: 1; background: #111; border: 1px solid #222; padding: 50px; border-radius: 35px; text-decoration: none; color: #fff; text-align: center; }
 
-/* --- Contact Section --- */
-.contact-center { 
-    align-items: center; 
-    text-align: center; 
-}
-
-.contact-cards { 
-    display: flex; 
-    gap: 30px; 
-    margin-top: 60px; 
-    width: 100%; 
-    max-width: 900px; 
-}
-
-.contact-card { 
-    flex: 1; 
-    background: #111; 
-    border: 1px solid #222; 
-    padding: 50px; 
-    border-radius: 35px; 
-    text-decoration: none; 
-    color: #fff; 
-    transition: 0.4s; 
-}
-
-.contact-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-5px);
-}
-
-/* --- Background Effect --- */
 .water-bg { 
     position: fixed; 
     top: 0; 
-    left: 0; 
     width: 100%; 
     height: 100%; 
     z-index: -1; 
@@ -264,11 +196,6 @@ h1, h2, h3, .logo {
     animation: flow 15s ease infinite; 
 }
 
-@keyframes flow { 
-    0% { background-position: 0% 50%; } 
-    50% { background-position: 100% 50%; } 
-    100% { background-position: 0% 50%; } 
-}
+@keyframes flow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
-.center-text { text-align: center; width: 100%; }
 footer { padding: 80px; text-align: center; opacity: 0.3; font-size: 0.8rem; }
