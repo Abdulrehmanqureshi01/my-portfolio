@@ -13,8 +13,8 @@
 
     <nav class="navbar">
         <div class="logo">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="Vantage Devs Logo" class="nav-logo-img">
-            VANTAGE DEVS<span>.</span>
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="nav-logo-img">
+            <div class="logo-text">VANTAGE DEVS<span>.</span></div>
         </div>
         <ul class="nav-links">
             {% if not selected_project %}
@@ -41,12 +41,8 @@
     <section id="about" class="section-container">
         <div class="about-grid">
             <div class="text-side">
-                <div class="accent-line"></div>
                 <h2 class="section-title">ABOUT US<span>.</span></h2>
-                <p class="headline">Innovating at the intersection of design and technology.</p>
-                <p class="body-text">
-                    I am a dedicated developer focused on building high-performance digital environments. My approach blends technical precision with creative problem-solving.
-                </p>
+                <p class="body-text">Focused on high-performance digital environments and automotive brand visualization.</p>
             </div>
             <div class="image-side">
                 <div class="image-wrapper">
@@ -63,13 +59,17 @@
                 {% for project in projects %}
                 <a href="/project/{{ loop.index0 }}" class="work-card">
                     <img src="{{ project.image }}" alt="{{ project.title }}">
-                    <div class="card-overlay"><h3>{{ project.title }}</h3></div>
+                    <div class="card-overlay">
+                        <h3>{{ project.title }}</h3>
+                    </div>
                 </a>
                 {% endfor %}
                 {% for project in projects %}
                 <a href="/project/{{ loop.index0 }}" class="work-card">
                     <img src="{{ project.image }}" alt="{{ project.title }}">
-                    <div class="card-overlay"><h3>{{ project.title }}</h3></div>
+                    <div class="card-overlay">
+                        <h3>{{ project.title }}</h3>
+                    </div>
                 </a>
                 {% endfor %}
             </div>
@@ -77,19 +77,12 @@
     </section>
 
     <section id="contact" class="section-container contact-center">
-    <h2 class="section-title">CONTACT US<span>.</span></h2>
-    <div class="contact-cards">
-        <a href="https://wa.me/918806066653" target="_blank" class="contact-card">
-            <i class="fa-brands fa-whatsapp"></i>
-            <h3>WhatsApp</h3>
-        </a>
-
-        <a href="mailto:abdulqureshi1m@gmail.com" class="contact-card">
-            <i class="fa-regular fa-envelope"></i>
-            <h3>Email</h3>
-        </a>
-    </div>
-</section>
+        <h2 class="section-title">CONTACT US<span>.</span></h2>
+        <div class="contact-cards">
+            <a href="https://wa.me/918806066653" target="_blank" class="contact-card"><i class="fa-brands fa-whatsapp"></i><h3>WhatsApp</h3></a>
+            <a href="mailto:abdulqureshi1m@gmail.com" class="contact-card"><i class="fa-regular fa-envelope"></i><h3>Email</h3></a>
+        </div>
+    </section>
 
     {% else %}
     <section class="section-container detail-view">
@@ -99,25 +92,14 @@
             </div>
             <div class="detail-content">
                 <h1 class="section-title">{{ selected_project.title }}<span>.</span></h1>
-                <div class="case-study-item">
-                    <h3>The Challenge</h3>
-                    <p>{{ selected_project.challenge }}</p>
-                </div>
-                <div class="case-study-item">
-                    <h3>The Solution</h3>
-                    <p>{{ selected_project.solution }}</p>
-                </div>
-                <div class="case-study-item">
-                    <h3>The Benefit</h3>
-                    <p>{{ selected_project.benefit }}</p>
-                </div>
+                <div class="case-study-item"><h3>Challenge</h3><p>{{ selected_project.challenge }}</p></div>
+                <div class="case-study-item"><h3>Solution</h3><p>{{ selected_project.solution }}</p></div>
+                <div class="case-study-item"><h3>Benefit</h3><p>{{ selected_project.benefit }}</p></div>
             </div>
         </div>
     </section>
     {% endif %}
 
-    <footer>
-        <p>&copy; 2026 Vantage Devs. All Rights Reserved.</p>
-    </footer>
+    <footer><p>&copy; 2026 Vantage Devs. All Rights Reserved.</p></footer>
 </body>
 </html>
